@@ -103,8 +103,8 @@ if [[ -n "$LOG_LEVEL" ]] ; then
 fi
 
 cd $KIBANA_DIR
-echo "-----> Remove the x-pack plugin"
-./bin/kibana-plugin remove "x-pack" | indent
+#echo "-----> Remove the x-pack plugin"
+#./bin/kibana-plugin remove "x-pack" | indent
 
 $configure_ssl_verify $KIBANA_DIR/config/kibana.yml
 
