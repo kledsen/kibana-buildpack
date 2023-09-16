@@ -34,13 +34,13 @@ fi
 
 KIBANA_PACKAGE=${DOWNLOAD_URL##*/}
 KIBANA_BASE_DIR=$(basename $KIBANA_PACKAGE .tar.gz)
-KIBANA_RUNTIME_DIR=`echo $KIBANA_BASE_DIR | sed 's/-oss//'`
+KIBANA_RUNTIME_DIR=`echo $KIBANA_BASE_DIR | sed 's/-linux-x86_64//'`
 ES_SSL_VERIFICATION_MODE=${ES_SSL_VERIFICATION_MODE:-full}
 
 case ${KIBANA_PACKAGE} in
   *.tar.gz)
     KIBANA_DIR="$BUILD_DIR/${KIBANA_PACKAGE%%.tar.gz}"
-    KIBANA_DIR=`echo $KIBANA_DIR | sed 's/\-oss//'`
+    KIBANA_DIR=`echo $KIBANA_DIR | sed 's/\-linux-x86_64//'`
     tar="tar xz"
     ;;
   *)
